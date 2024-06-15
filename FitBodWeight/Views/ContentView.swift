@@ -12,7 +12,7 @@ struct ContentView: View {
     var workouts: [String: WorkoutTimeSerie]
     
     func workoutHeader(for exerciseName: String) -> Workout {
-        workouts[exerciseName]?.lastWorkout ?? .invalidHeader(for: exerciseName)
+        workouts[exerciseName]?.max1rmWorkout ?? .invalidHeader(for: exerciseName)
     }
     
     var body: some View {

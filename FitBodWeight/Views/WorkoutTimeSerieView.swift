@@ -13,7 +13,7 @@ struct WorkoutTimeSerieView: View {
     
     var body: some View {
         VStack {
-            WorkoutHeader(workout: timeSerie.lastWorkout ?? .invalidHeader(for: timeSerie.exerciseName))
+            WorkoutHeader(workout: timeSerie.max1rmWorkout ?? .invalidHeader(for: timeSerie.exerciseName))
             Chart(timeSerie.groupByDayValues(limiting: .month, value: -2)) { current in
                 LineMark(
                     x: .value("Date of Workout", current.dateOfWorkout),
